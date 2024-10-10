@@ -1,10 +1,6 @@
 /* eslint-disable react/prop-types */
-import Devices from "./device";
-import { deviceInfo } from "./data";
-import Laptops from "./laptops";
-
-import Phones from "./phone";
-import Accessories from "./accessories";
+import ListOfDevices from "./listOfDevices";
+import Categories from "./categories";
 import Cart from "./cart";
 
 function DeviceList({
@@ -20,38 +16,29 @@ function DeviceList({
   toggleLappy,
   togglePhone,
   toggleAccessory,
-  filteredLappy,
-  filteredPhone,
-  filteredAccessories,
 }) {
   return (
     <>
       <div className="categories">
-        <ul>
-          <li onClick={onToggleAll}>All Devices</li>
-          <li onClick={onToggleLappy}>laptop</li>
-          <li onClick={onTogglePhone}>Phone</li>
-          <li onClick={onToggleAccessory}>Accessories</li>
-        </ul>
+        <Categories
+          onToggleLappy={onToggleLappy}
+          onTogglePhone={onTogglePhone}
+          onToggleAll={onToggleAll}
+          onToggleAccessory={onToggleAccessory}
+        />
       </div>
       <div className="listOfDevices">
-        {toggleALl &&
-          deviceInfo.map((device) => (
-            <Devices onAddToCart={onAddToCart} device={device} key={crypto.randomUUID()}></Devices>
-          ))}
-        {toggleLappy &&
-          filteredLappy.map((lappy) => (
-            <Laptops lappy={lappy} key={crypto.randomUUID()} onAddToCart={onAddToCart} />
-          ))}
-        {togglePhone &&
-          filteredPhone.map((phone) => (
-            <Phones phone={phone} key={crypto.randomUUID()} onAddToCart={onAddToCart}/>
-          ))}
-        {toggleAccessory &&
-          filteredAccessories.map((accessory) => (
-            <Accessories accessory={accessory} key={crypto.randomUUID()} onAddToCart={onAddToCart}/>
-          ))}
-        {toggleCart && <Cart onDeleteFromCart={onDeleteFromCart} cart={cart}/>}
+        <ListOfDevices
+          onAddToCart={onAddToCart}
+          toggleALl={toggleALl}
+          toggleLappy={toggleLappy}
+          toggleAccessory={toggleAccessory}
+          togglePhone={togglePhone}
+        >
+          {toggleCart && (
+            <Cart onDeleteFromCart={onDeleteFromCart} cart={cart} />
+          )}
+        </ListOfDevices>
       </div>
     </>
   );
