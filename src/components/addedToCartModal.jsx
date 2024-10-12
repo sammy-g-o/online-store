@@ -5,7 +5,7 @@ function AddedToCartModal({ setModal, modal}) {
       <div className="container">
         <div className="inner-wrap">
           <div>
-            <p>{modal} was added to cart</p>
+            <p>{modal} was successfully added to cart</p>
           <button onClick={() => setModal(false)}>close</button>
           </div>
         </div>
