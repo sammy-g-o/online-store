@@ -7,13 +7,15 @@ import SearchBar from "./searchBar";
 import Icons from "./icons";
 import Categories from "./categories";
 import ListOfDevices from "./listOfDevices";
+import AddedToCartModal from "./addedToCartModal";
+
 function App() {
   const [toggleCart, setToggleCart] = useState(false);
   const [toggleLappy, setToggleLappy] = useState(false);
   const [togglePhone, setTogglePhone] = useState(false);
   const [toggleALl, setToggleAll] = useState(true);
   const [toggleAccessory, setToggleAccessory] = useState(false);
-
+  const [modal, setModal] = useState(null);
   function handleToggleLappy() {
     setToggleLappy(true);
     setTogglePhone(false);
@@ -55,35 +57,39 @@ function App() {
   }
 
   return (
-    <>
-      <Nav>
-        <Logo />
-        <SearchBar />
-        <Icons onToggleCart={handleToggleCart} />
-      </Nav>
+    <div style={{ position: "relative", width: "100%", height: "auto" }}>
+      <div>
+        <Nav>
+          <Logo />
+          <SearchBar />
+          <Icons onToggleCart={handleToggleCart} />
+        </Nav>
 
-      <DeviceList
-        categories={
-          <Categories
-            onToggleLappy={handleToggleLappy}
-            onTogglePhone={handleTogglePhone}
-            onToggleAll={handleToggleAll}
-            onToggleAccessory={handleToggleAccessory}
-          />
-        }
-        listOfDevices={
-          <ListOfDevices
-            toggleCart={toggleCart}
-            toggleALl={toggleALl}
-            toggleLappy={toggleLappy}
-            toggleAccessory={toggleAccessory}
-            togglePhone={togglePhone}
-          ></ListOfDevices>
-        }
-      />
+        <DeviceList
+          categories={
+            <Categories
+              onToggleLappy={handleToggleLappy}
+              onTogglePhone={handleTogglePhone}
+              onToggleAll={handleToggleAll}
+              onToggleAccessory={handleToggleAccessory}
+            />
+          }
+          listOfDevices={
+            <ListOfDevices
+              setModal={setModal}
+              toggleCart={toggleCart}
+              toggleALl={toggleALl}
+              toggleLappy={toggleLappy}
+              toggleAccessory={toggleAccessory}
+              togglePhone={togglePhone}
+            ></ListOfDevices>
+          }
+        />
 
-      <Footer />
-    </>
+        <Footer />
+      </div>
+      {modal && <AddedToCartModal modal={modal} setModal={setModal} />}
+    </div>
   );
 }
 

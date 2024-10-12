@@ -11,7 +11,6 @@ function DeviceList({
       </div>
       <div className="listOfDevices">
         {listOfDevices}
-        
       </div>
     </>
   );

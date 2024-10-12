@@ -87,6 +87,8 @@ nav .icons img {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  height: 59vh;
+  overflow: auto;
 }
 .cart-item {
   display: flex;
@@ -103,7 +105,7 @@ nav .icons img {
   display: flex;
   gap: 7px;
 }
-.quantity button{
+.quantity button {
   background-color: transparent;
   border: none;
   font-size: larger;
@@ -180,4 +182,39 @@ footer .footer-lists ul {
 footer .footer-lists ul li {
   font-size: 20px;
   line-height: 33.89px;
+}
+.modal {
+  font-family: intra;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  top: 0;
+}
+.modal .container {
+  z-index: 100;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  padding-top: 9%;
+}
+.modal .container .inner-wrap {
+ background-color: #081142;
+ height: 100px;
+ width: 300px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border-radius: 10px;
+ color: #f1f1f1;
+ position: relative;
+}
+.modal .container .inner-wrap button {
+ position: absolute;
+ right: 20px;
+ bottom: 10px;
+ padding: 5px 10px;
+ cursor: pointer;
 }

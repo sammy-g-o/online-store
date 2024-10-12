@@ -4,7 +4,7 @@ import Phones from "./phone";
 import Laptops from "./laptops";
 import Devices from "./device";
 import { useState } from "react";
-import { deviceInfo } from "./data";
+import { deviceInfo } from "../data";
 import Cart from "./cart";
 
 function ListOfDevices({
@@ -12,6 +12,7 @@ function ListOfDevices({
   toggleLappy,
   togglePhone,
   toggleAccessory,
+  setModal,
   toggleCart,
 }) {
   const [cart, setCart] = useState([]);
@@ -19,6 +20,7 @@ function ListOfDevices({
     if (!cart.includes(device)) {
       setCart([...cart, device]);
       alert(`${device.name} has been added to cart`);
+      setModal(device.name)
     } else {
       console.log("damn, error");
     }
