@@ -2,6 +2,7 @@ import { useState } from "react";
 
 /* eslint-disable react/prop-types */
 function Cart({cart, onDeleteFromCart}) {
+  
   const [quantity, setQuantity]=useState(1);
   function handleIncreaseQuantity() {
     setQuantity(quantity+1)

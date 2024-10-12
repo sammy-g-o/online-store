@@ -3,26 +3,47 @@ import Accessories from "./accessories";
 import Phones from "./phone";
 import Laptops from "./laptops";
 import Devices from "./device";
+import { useState } from "react";
 import { deviceInfo } from "./data";
+import Cart from "./cart";
 
-function ListOfDevices({toggleALl, onAddToCart, toggleLappy,  togglePhone, toggleAccessory, children}) {
+function ListOfDevices({
+  toggleALl,
+  toggleLappy,
+  togglePhone,
+  toggleAccessory,
+  toggleCart,
+}) {
+  const [cart, setCart] = useState([]);
+  function handleAddToCart(device) {
+    if (!cart.includes(device)) {
+      setCart([...cart, device]);
+      alert(`${device.name} has been added to cart`);
+    } else {
+      console.log("damn, error");
+    }
+  }
 
-    const filteredLappy = deviceInfo.filter(
-        (laptop) => laptop.category === "laptop"
-      );
-      const filteredPhone = deviceInfo.filter(
-        (phone) => phone.category === "phone"
-      );
-      const filteredAccessories = deviceInfo.filter(
-        (accessory) => accessory.category === "accessory"
-      );
+  function handleDeleteFromCart(name) {
+    setCart(cart.filter((cart) => cart.name !== name));
+  }
+
+  const filteredLappy = deviceInfo.filter(
+    (laptop) => laptop.category === "laptop"
+  );
+  const filteredPhone = deviceInfo.filter(
+    (phone) => phone.category === "phone"
+  );
+  const filteredAccessories = deviceInfo.filter(
+    (accessory) => accessory.category === "accessory"
+  );
 
   return (
     <>
       {toggleALl &&
         deviceInfo.map((device) => (
           <Devices
-            onAddToCart={onAddToCart}
+            onAddToCart={handleAddToCart}
             device={device}
             key={crypto.randomUUID()}
           ></Devices>
@@ -33,7 +54,7 @@ function ListOfDevices({toggleALl, onAddToCart, toggleLappy,  togglePhone, toggl
           <Laptops
             lappy={lappy}
             key={crypto.randomUUID()}
-            onAddToCart={onAddToCart}
+            onAddToCart={handleAddToCart}
           />
         ))}
 
@@ -42,7 +63,7 @@ function ListOfDevices({toggleALl, onAddToCart, toggleLappy,  togglePhone, toggl
           <Phones
             phone={phone}
             key={crypto.randomUUID()}
-            onAddToCart={onAddToCart}
+            onAddToCart={handleAddToCart}
           />
         ))}
 
@@ -51,11 +72,12 @@ function ListOfDevices({toggleALl, onAddToCart, toggleLappy,  togglePhone, toggl
           <Accessories
             accessory={accessory}
             key={crypto.randomUUID()}
-            onAddToCart={onAddToCart}
+            onAddToCart={handleAddToCart}
           />
         ))}
-        
-      {children}
+      {toggleCart && (
+        <Cart onDeleteFromCart={handleDeleteFromCart} cart={cart} />
+      )}
     </>
   );
 }

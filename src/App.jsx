@@ -2,14 +2,17 @@ import { useState } from "react";
 import Nav from "./nav";
 import Footer from "./footer";
 import DeviceList from "./deviceList";
+import Logo from "./logo";
+import SearchBar from "./searchBar";
+import Icons from "./icons";
+import Categories from "./categories";
+import ListOfDevices from "./listOfDevices";
 function App() {
-
   const [toggleCart, setToggleCart] = useState(false);
   const [toggleLappy, setToggleLappy] = useState(false);
   const [togglePhone, setTogglePhone] = useState(false);
   const [toggleALl, setToggleAll] = useState(true);
   const [toggleAccessory, setToggleAccessory] = useState(false);
-  const [cart, setCart] = useState([]);
 
   function handleToggleLappy() {
     setToggleLappy(true);
@@ -51,36 +54,34 @@ function App() {
     setTogglePhone(false);
   }
 
-  function handleAddToCart(device) {
-    if (!cart.includes(device)) {
-      setCart([...cart, device]);
-      alert(`${device.name} has been added to cart`);
-    } else {
-      console.log("damn, error");
-    }
-  }
-
-  function handleDeleteFromCart(name) {
-    setCart(cart.filter((cart) => cart.name !== name));
-  }
-  
   return (
     <>
-      <Nav onToggleCart={handleToggleCart} />
+      <Nav>
+        <Logo />
+        <SearchBar />
+        <Icons onToggleCart={handleToggleCart} />
+      </Nav>
+
       <DeviceList
-        cart={cart}
-        toggleALl={toggleALl}
-        toggleAccessory={toggleAccessory}
-        toggleLappy={toggleLappy}
-        togglePhone={togglePhone}
-        toggleCart={toggleCart}
-        onAddToCart={handleAddToCart}
-        onDeleteFromCart={handleDeleteFromCart}
-        onToggleLappy={handleToggleLappy}
-        onTogglePhone={handleTogglePhone}
-        onToggleAll={handleToggleAll}
-        onToggleAccessory={handleToggleAccessory}
+        categories={
+          <Categories
+            onToggleLappy={handleToggleLappy}
+            onTogglePhone={handleTogglePhone}
+            onToggleAll={handleToggleAll}
+            onToggleAccessory={handleToggleAccessory}
+          />
+        }
+        listOfDevices={
+          <ListOfDevices
+            toggleCart={toggleCart}
+            toggleALl={toggleALl}
+            toggleLappy={toggleLappy}
+            toggleAccessory={toggleAccessory}
+            togglePhone={togglePhone}
+          ></ListOfDevices>
+        }
       />
+
       <Footer />
     </>
   );

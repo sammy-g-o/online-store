@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-function Icons({children}) {
+function Icons({ onToggleCart }) {
   return (
     <div className="icons ">
       <span className="dropdown">
@@ -25,7 +25,9 @@ function Icons({children}) {
           </li>
         </div>
       </span>
-      {children}
+      <span onClick={onToggleCart}>
+        <img src="/Cart-Plus--Streamline-Bootstrap (1).svg" alt="" />
+      </span>
     </div>
   );
 }
