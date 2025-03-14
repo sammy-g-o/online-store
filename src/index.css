@@ -125,11 +125,15 @@ nav .icons img {
   border-bottom: 1px solid #081142;
   display: flex;
   list-style: none;
-  cursor: pointer;
   justify-content: space-between;
 }
 .categories ul li {
   font-size: 25px;
+}
+.categories ul li a{
+  text-decoration: none;
+  color: #030b26;
+  cursor: pointer;
 }
 .listOfDevices {
   display: flex;

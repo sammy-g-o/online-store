@@ -3,9 +3,14 @@ import { useState } from "react";
 /* eslint-disable react/prop-types */
 function Cart({cart, onDeleteFromCart}) {
   
-  const [quantity, setQuantity]=useState(1);
-  function handleIncreaseQuantity() {
-    setQuantity(quantity+1)
+  const [quantity, setQuantity]=useState();
+  function handleIncreaseQuantity(name) {
+    const filtered = cart.filter((carts)=> carts.name === name)
+    console.log(filtered);
+    
+    const updatedCart = filtered.map((cartItem)=> cart.name === name ?  {...cartItem, quantity: quantity}: cartItem)
+   setQuantity(updatedCart[0].quantity+1)
+   console.log(updatedCart[0].quantity);
   }
   function handleDecreaseQuantity() {
     if(quantity<1)return;
@@ -37,7 +42,7 @@ function Cart({cart, onDeleteFromCart}) {
                 <div className="quantity">
                   <button onClick={handleDecreaseQuantity}>-</button>
                   <p className="show-quantity">{quantity}</p>
-                  <button onClick={handleIncreaseQuantity}>+</button>
+                  <button onClick={()=>handleIncreaseQuantity(cartItem.name)}>+</button>
                 </div>
                 <div>₦{cartItem.price}</div>
             </div>)}

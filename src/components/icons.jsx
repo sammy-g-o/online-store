@@ -1,5 +1,6 @@
+import {Link} from 'react-router-dom'
 /* eslint-disable react/prop-types */
-function Icons({ onToggleCart }) {
+function Icons() {
   return (
     <div className="icons ">
       <span className="dropdown">
@@ -25,8 +26,8 @@ function Icons({ onToggleCart }) {
           </li>
         </div>
       </span>
-      <span onClick={onToggleCart}>
-        <img src="/Cart-Plus--Streamline-Bootstrap (1).svg" alt="" />
+      <span>
+        <Link to='/cart'><img src="/Cart-Plus--Streamline-Bootstrap (1).svg" alt="" /></Link>
       </span>
     </div>
   );
