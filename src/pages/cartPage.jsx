@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
-import Nav from '../src/components/nav'
-import Footer from "../src/components/footer";
-import Logo from "../src/components/logo";
-import SearchBar from "../src/components/searchBar";
-import Icons from "../src/components/icons";
-import Cart from '../src/components/cart';
+import Nav from '../components/nav'
+import Footer from "../components/footer";
+import Logo from "../components/logo";
+import SearchBar from "../components/searchBar";
+import Icons from "../components/icons";
+import Cart from '../components/cart';
 
 function CartPage({handleDeleteFromCart, cart}) {
 

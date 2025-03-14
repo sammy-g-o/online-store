@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
-import { deviceInfo } from "../src/data";
-import Phones from "../src/components/phone";
-import Nav from "../src/components/nav";
-import DeviceList from "../src/components/deviceList";
-import Categories from "../src/components/categories";
-import Footer from "../src/components/footer";
-import AddedToCartModal from "../src/components/addedToCartModal";
+import { deviceInfo } from "../data";
+import Phones from "../components/phone";
+import Nav from "../components/nav";
+import DeviceList from "../components/deviceList";
+import Categories from "../components/categories";
+import Footer from "../components/footer";
+import AddedToCartModal from "../components/addedToCartModal";
 function PhonePage({handleAddToCart, modal, setModal}) {
   const filteredPhone = deviceInfo.filter(
     (phone) => phone.category === "phone"

@@ -1,8 +1,8 @@
-import HomePage from "../../pages/homepage";
-import CartPage from "../../pages/cartPage";
-import PhonePage from "../../pages/phonePage";
-import LaptopPage from "../../pages/laptopPage";
-import AccessoriesPage from "../../pages/accessoriesPage";
+import HomePage from "../pages/homepage";
+import CartPage from "../pages/cartPage";
+import PhonePage from "../pages/phonePage";
+import LaptopPage from "../pages/laptopPage";
+import AccessoriesPage from "../pages/accessoriesPage";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {

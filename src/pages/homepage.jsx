@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
-import Nav from "../src/components/nav";
-import Footer from "../src/components/footer";
-import DeviceList from "../src/components/deviceList";
+import Nav from "../components/nav";
+import Footer from "../components/footer";
+import DeviceList from "../components/deviceList";
 
-import Categories from "../src/components/categories";
-import AddedToCartModal from "../src/components/addedToCartModal";
-import { deviceInfo } from "../src/data";
-import Devices from "../src/components/device";
+import Categories from "../components/categories";
+import AddedToCartModal from "../components/addedToCartModal";
+import { deviceInfo } from "../data";
+import Devices from "../components/device";
 
 function HomePage({ handleAddToCart, modal, setModal }) {
   return (
