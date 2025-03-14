@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import Logo from "./logo";
 import SearchBar from "./searchBar";
 import Icons from "./icons";

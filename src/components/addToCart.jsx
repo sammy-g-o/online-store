@@ -6,7 +6,7 @@ function AddToCart({onClick}) {
       <button onClick={onClick} className="add-to-cart">
         <span>Add to cart</span>{" "}
         <img
-          src="../public/Cart-Plus--Streamline-Bootstrap (1).svg"
+          src="../Cart-Plus--Streamline-Bootstrap (1).svg"
           width="20px"
           alt=""
         />

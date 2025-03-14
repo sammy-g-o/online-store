@@ -1,5 +1,4 @@
 import {Link} from 'react-router-dom'
-/* eslint-disable react/prop-types */
 function Icons() {
   return (
     <div className="icons ">
