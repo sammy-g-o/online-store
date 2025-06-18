@@ -1,13 +1,23 @@
 /* eslint-disable react/prop-types */
 import AddToCart from "./addToCart";
-function Laptops({ lappy, onAddToCart}) {
+function Laptops({ lappy, onAddToCart, setDisplayDetails, setDeetsToDisplay }) {
+  const { name, image, price } = lappy;
+  function displayDeets() {
+    setDisplayDetails(true);
+    const deetsToDisplay = {
+      name,
+      image,
+      price,
+    };
+    setDeetsToDisplay(deetsToDisplay);
+  }
   return (
     <>
       <div className="deviceinfo">
-      <img src={lappy.image} alt="" />
-        <p>{lappy.name}</p>
-        <p>₦{lappy.price}</p>
-        <AddToCart onClick={()=>onAddToCart(lappy)}/>
+        <img src={image} alt="" />
+        <p onClick={displayDeets}>{name}</p>
+        <p>₦{price}</p>
+        <AddToCart onClick={() => onAddToCart(lappy)} />
       </div>
     </>
   );
