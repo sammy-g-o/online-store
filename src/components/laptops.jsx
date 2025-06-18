@@ -1,25 +1,18 @@
 /* eslint-disable react/prop-types */
 import AddToCart from "./addToCart";
-function Laptops({ lappy, onAddToCart, setDisplayDetails, setDeetsToDisplay }) {
+import { Link } from "react-router-dom";
+
+function Laptops({ lappy, onAddToCart }) {
   const { name, image, price } = lappy;
-  function displayDeets() {
-    setDisplayDetails(true);
-    const deetsToDisplay = {
-      name,
-      image,
-      price,
-    };
-    setDeetsToDisplay(deetsToDisplay);
-  }
+  
   return (
-    <>
-      <div className="deviceinfo">
-        <img src={image} alt="" />
-        <p onClick={displayDeets}>{name}</p>
-        <p>₦{price}</p>
-        <AddToCart onClick={() => onAddToCart(lappy)} />
-      </div>
-    </>
+    <div className="deviceinfo">
+      <img src={image} alt="" />
+      <Link to={`/laptops/${name}`}>{name}</Link>
+      <p>₦{price}</p>
+      <AddToCart onClick={() => onAddToCart(lappy)} />
+    </div>
   );
 }
+
 export default Laptops;

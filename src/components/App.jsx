@@ -3,6 +3,9 @@ import CartPage from "../pages/cartPage";
 import PhonePage from "../pages/phonePage";
 import LaptopPage from "../pages/laptopPage";
 import AccessoriesPage from "../pages/accessoriesPage";
+import LaptopProductDetailsPage from "../pages/laptopProductDetailsPage";
+import PhoneProductDetailsPage from "../pages/phoneProductDetailsPage";
+import AccessoriesProductDetailsPage from "../pages/accessoriesProductDetailsPage";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
@@ -12,7 +15,7 @@ function App() {
     if (!cart.includes(device)) {
       setCart([...cart, device]);
       alert(`${device.name} has been added to cart`);
-      setModal(device.name)
+      setModal(device.name);
     } else {
       console.log("damn, error");
     }
@@ -24,11 +27,64 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<HomePage handleAddToCart={handleAddToCart} modal={modal} setModal={setModal}/>}/>
-        <Route path='/laptops' element={<LaptopPage handleAddToCart={handleAddToCart} modal={modal} setModal={setModal}/>}/>
-        <Route path='/phones' element={<PhonePage handleAddToCart={handleAddToCart} modal={modal} setModal={setModal}/>}/>
-        <Route path='/accessories' element={<AccessoriesPage handleAddToCart={handleAddToCart} modal={modal} setModal={setModal}/>}/>
-        <Route path='/cart' element={<CartPage handleDeleteFromCart={handleDeleteFromCart} cart={cart}/>}/>
+        <Route
+          path="/"
+          element={
+            <HomePage
+              handleAddToCart={handleAddToCart}
+              modal={modal}
+              setModal={setModal}
+            />
+          }
+        />
+        <Route
+          path="/laptops"
+          element={
+            <LaptopPage
+              handleAddToCart={handleAddToCart}
+              modal={modal}
+              setModal={setModal}
+            />
+          }
+        />
+        <Route
+          path="/phones"
+          element={
+            <PhonePage
+              handleAddToCart={handleAddToCart}
+              modal={modal}
+              setModal={setModal}
+            />
+          }
+        />
+        <Route
+          path="/accessories"
+          element={
+            <AccessoriesPage
+              handleAddToCart={handleAddToCart}
+              modal={modal}
+              setModal={setModal}
+            />
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            <CartPage handleDeleteFromCart={handleDeleteFromCart} cart={cart} />
+          }
+        />
+        <Route
+          path="/laptops/:nameOfDevice"
+          element={<LaptopProductDetailsPage />}
+        />
+        <Route
+          path="/phones/:nameOfDevice"
+          element={<PhoneProductDetailsPage />}
+        />
+        <Route
+          path="/accessories/:nameOfDevice"
+          element={<AccessoriesProductDetailsPage />}
+        />
       </Routes>
     </BrowserRouter>
   );
