@@ -1,4 +1,3 @@
-import { useState } from "react";
 import CartItem from "./cartItem";
 
 /* eslint-disable react/prop-types */
