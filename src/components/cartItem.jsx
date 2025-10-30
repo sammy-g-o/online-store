@@ -11,7 +11,7 @@ function CartItem({ cartItem, onDeleteFromCart }) {
     }
     return (
         <>
-            <div className="cart-item" key={crypto.randomUUID()}>
+            <div className="cart-item">
                 <div className="delete-item" onClick={() => onDeleteFromCart(cartItem.name)}>❌</div>
                 <div><img src={cartItem.image} /></div>
                 <div>{cartItem.name}</div>

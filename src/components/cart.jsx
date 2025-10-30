@@ -23,7 +23,7 @@ function Cart({ cart, onDeleteFromCart }) {
         {cart.length > 0 && (
           <div className="cart">
             <div></div>
-            {cart.map((cartItem) => <CartItem cartItem={cartItem} onDeleteFromCart={onDeleteFromCart}/>)}
+            {cart.map((cartItem) => <CartItem cartItem={cartItem} onDeleteFromCart={onDeleteFromCart} key={crypto.randomUUID()}/>)}
           </div>
         )}
       </div>
