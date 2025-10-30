@@ -266,6 +266,7 @@ footer .footer-lists ul li {
 
 .go-back {
   cursor: pointer;
+  font-size: 30px;
 }
 .product-name{
   text-decoration: none;
