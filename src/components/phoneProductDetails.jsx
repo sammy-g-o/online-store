@@ -11,7 +11,7 @@ function PhoneProductDetails() {
   }
   return (
     <div>
-      <span onClick={goToPreviousPage}>&larr;</span>
+      <span onClick={goToPreviousPage} className="go-back">&larr;</span>
       <img src={phone.image} alt="" />
       <p>{phone.name}</p>
       <p>₦{phone.price}</p>

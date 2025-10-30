@@ -19,7 +19,7 @@ function goToPreviousPage(){
 
   return (
     <div>
-      <span onClick={goToPreviousPage}>&larr;</span>
+      <span onClick={goToPreviousPage} className="go-back">&larr;</span>
       <img src={lappy.image} alt="" />
       <p>{lappy.name}</p>
       <p>₦{lappy.price}</p>

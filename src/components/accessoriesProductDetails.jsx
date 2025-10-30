@@ -10,7 +10,7 @@ function AccessoriesProductDetails(){
         }
     return(
         <div>
-      <span onClick={goToPreviousPage}>&larr;</span>
+      <span onClick={goToPreviousPage} className="go-back">&larr;</span>
       <img src={accessories.image} alt="" />
       <p>{accessories.name}</p>
       <p>₦{accessories.price}</p>
