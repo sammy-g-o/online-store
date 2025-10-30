@@ -12,7 +12,7 @@ function Categories() {
           <NavLink to="/laptops" className={({ isActive }) => (isActive ? "categories-active" : "")}>laptops</NavLink>
         </li>
         <li>
-          <NavLink to="/phones" className={({ isActive }) => (isActive ? "categories-active" : "")}>Phone</NavLink>
+          <NavLink to="/phones" className={({ isActive }) => (isActive ? "categories-active" : "")}>Phones</NavLink>
         </li>
         <li>
           <NavLink to="/accessories" className={({ isActive }) => (isActive ? "categories-active" : "")}>Accessories</NavLink>
