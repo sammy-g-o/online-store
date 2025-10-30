@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 function CartItem({ cartItem, onDeleteFromCart }) {
     const [quantity, setQuantity] = useState(0);
