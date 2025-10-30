@@ -137,21 +137,28 @@ nav .icons img {
 
 .categories {
   margin: 30px 0px;
-  padding: 0px 4.5625rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .categories ul {
-  padding-bottom: 15px;
-  border-bottom: 1px solid #081142;
   display: flex;
   list-style: none;
+  width: 80%;
   justify-content: space-between;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #6c6d7456;
 }
 
-.categories ul li {
+.categories ul li a{
   font-size: 25px;
+  padding: 0 20px 15px 20px;
 }
-
+.categories-active {
+  border-bottom: 1px solid #081142;
+  padding-bottom: 15px;
+}
 .categories ul li a {
   text-decoration: none;
   color: #030b26;
@@ -259,4 +266,8 @@ footer .footer-lists ul li {
 
 .go-back {
   cursor: pointer;
+}
+.product-name{
+  text-decoration: none;
+  color:#081142
 }

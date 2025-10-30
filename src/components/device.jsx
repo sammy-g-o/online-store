@@ -7,7 +7,7 @@ function Devices({ device, onAddToCart }) {
   return (
     <div className="deviceinfo">
       <img src={device.image} alt="" />
-      <Link to={`/${device.category === 'accessory' ? 'accessories' : device.category + 's'}/${device.name}`}>{device.name}</Link>
+      <Link to={`/${device.category === 'accessory' ? 'accessories' : device.category + 's'}/${device.name}`} className="product-name">{device.name}</Link>
       <p>₦{device.price}</p>
       <AddToCart onClick={() => onAddToCart(device)} />
     </div>

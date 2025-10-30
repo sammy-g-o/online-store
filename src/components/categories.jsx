@@ -1,20 +1,21 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
 
 function Categories() {
   return (
     <>
       <ul>
         <li>
-          <Link to="/">All Devices</Link>
+          <NavLink to="/" className={({ isActive }) => (isActive ? "categories-active" : "")}>All Products</NavLink>
         </li>
         <li>
-          <Link to="/laptops">laptops</Link>
+          <NavLink to="/laptops" className={({ isActive }) => (isActive ? "categories-active" : "")}>laptops</NavLink>
         </li>
         <li>
-          <Link to="/phones">Phone</Link>
+          <NavLink to="/phones" className={({ isActive }) => (isActive ? "categories-active" : "")}>Phone</NavLink>
         </li>
         <li>
-          <Link to="/accessories">Accessories</Link>
+          <NavLink to="/accessories" className={({ isActive }) => (isActive ? "categories-active" : "")}>Accessories</NavLink>
         </li>
       </ul>
     </>

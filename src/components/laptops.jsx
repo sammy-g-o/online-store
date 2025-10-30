@@ -8,7 +8,7 @@ function Laptops({ lappy, onAddToCart }) {
   return (
     <div className="deviceinfo">
       <img src={image} alt="" />
-      <Link to={`/laptops/${name}`}>{name}</Link>
+      <Link to={`/laptops/${name}`} className="product-name">{name}</Link>
       <p>₦{price}</p>
       <AddToCart onClick={() => onAddToCart(lappy)} />
     </div>

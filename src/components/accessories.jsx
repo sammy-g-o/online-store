@@ -6,7 +6,7 @@ function Accessories({ accessory, onAddToCart}) {
     <>
       <div className="deviceinfo">
       <img src={accessory.image} alt="" />
-        <Link to={`/accessories/${accessory.name}`}>{accessory.name}</Link>
+        <Link to={`/accessories/${accessory.name}`} className="product-name">{accessory.name}</Link>
         <p>₦{accessory.price}</p>
         <AddToCart onClick={()=>onAddToCart(accessory)}/>
       </div>
