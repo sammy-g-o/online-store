@@ -3,9 +3,7 @@ import CartPage from "../pages/cartPage";
 import PhonePage from "../pages/phonePage";
 import LaptopPage from "../pages/laptopPage";
 import AccessoriesPage from "../pages/accessoriesPage";
-import LaptopProductDetailsPage from "../pages/laptopProductDetailsPage";
-import PhoneProductDetailsPage from "../pages/phoneProductDetailsPage";
-import AccessoriesProductDetailsPage from "../pages/accessoriesProductDetailsPage";
+import ProductDetailsPage from "../pages/productDetailsPage";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
@@ -75,15 +73,15 @@ function App() {
         />
         <Route
           path="/laptops/:nameOfDevice"
-          element={<LaptopProductDetailsPage />}
+          element={<ProductDetailsPage />}
         />
         <Route
           path="/phones/:nameOfDevice"
-          element={<PhoneProductDetailsPage />}
+          element={<ProductDetailsPage />}
         />
         <Route
           path="/accessories/:nameOfDevice"
-          element={<AccessoriesProductDetailsPage />}
+          element={<ProductDetailsPage />}
         />
       </Routes>
     </BrowserRouter>
