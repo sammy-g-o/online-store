@@ -10,17 +10,28 @@ function App() {
   const [modal, setModal] = useState(null);
   const [cart, setCart] = useState([]);
   function handleAddToCart(device) {
-    if (!cart.includes(device)) {
-      setCart([...cart, device]);
-      alert(`${device.name} has been added to cart`);
+    if (!cart.find((item) => item.name === device.name)) {
+      setCart([...cart, { ...device, quantity: 1 }]);
       setModal(device.name);
-    } else {
-      console.log("damn, error");
     }
   }
 
   function handleDeleteFromCart(name) {
-    setCart(cart.filter((cart) => cart.name !== name));
+    setCart(cart.filter((item) => item.name !== name));
+  }
+
+  function handleIncreaseQuantity(name) {
+    setCart(cart.map((item) =>
+      item.name === name ? { ...item, quantity: item.quantity + 1 } : item
+    ));
+  }
+
+  function handleDecreaseQuantity(name) {
+    setCart(cart.map((item) =>
+      item.name === name && item.quantity > 1
+        ? { ...item, quantity: item.quantity - 1 }
+        : item
+    ));
   }
   return (
     <BrowserRouter>
@@ -68,7 +79,12 @@ function App() {
         <Route
           path="/cart"
           element={
-            <CartPage handleDeleteFromCart={handleDeleteFromCart} cart={cart} />
+            <CartPage
+              handleDeleteFromCart={handleDeleteFromCart}
+              handleIncreaseQuantity={handleIncreaseQuantity}
+              handleDecreaseQuantity={handleDecreaseQuantity}
+              cart={cart}
+            />
           }
         />
         <Route

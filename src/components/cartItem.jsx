@@ -1,29 +1,23 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
-function CartItem({ cartItem, onDeleteFromCart}) {
-    const [quantity, setQuantity] = useState(0);
-    function handleIncreaseQuantity() {
-        setQuantity((quantity) => quantity + 1)
-    }
-    function handleDecreaseQuantity() {
-        if (quantity > 0) {
-            setQuantity(quantity - 1);
-        }
-    }
+function CartItem({ cartItem, onDeleteFromCart, onIncreaseQuantity, onDecreaseQuantity }) {
     return (
-        <>
-            <div className="cart-item">
-                <div className="delete-item" onClick={() => onDeleteFromCart(cartItem.name)}>❌</div>
-                <div><img src={cartItem.image} /></div>
-                <div>{cartItem.name}</div>
-                <div className="quantity">
-                    <button onClick={handleDecreaseQuantity}>-</button>
-                    <p className="show-quantity">{quantity}</p>
-                    <button onClick={() => handleIncreaseQuantity(cartItem.name)}>+</button>
-                </div>
-                <div>₦{cartItem.price}</div>
+        <div className="cart-item">
+            <div className="cart-item__image">
+                <img src={cartItem.image} alt={cartItem.name} />
             </div>
-        </>
+            <div className="cart-item__details">
+                <div className="cart-item__top">
+                    <span className="cart-item__name">{cartItem.name}</span>
+                    <span className="delete-item" onClick={() => onDeleteFromCart(cartItem.name)}>❌</span>
+                </div>
+                <div className="cart-item__price">₦{cartItem.price}</div>
+                <div className="quantity">
+                    <button onClick={() => onDecreaseQuantity(cartItem.name)}>-</button>
+                    <p className="show-quantity">{cartItem.quantity}</p>
+                    <button onClick={() => onIncreaseQuantity(cartItem.name)}>+</button>
+                </div>
+            </div>
+        </div>
     )
 }
 export default CartItem;

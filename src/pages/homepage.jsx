@@ -20,7 +20,7 @@ function HomePage({ handleAddToCart, modal, setModal }) {
             <Devices
               onAddToCart={handleAddToCart}
               device={device}
-              key={crypto.randomUUID()}
+              key={device.name}
             ></Devices>
           ))}
         </div>

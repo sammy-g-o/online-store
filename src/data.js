@@ -5,7 +5,7 @@ export const deviceInfo = [
     price: "950,000",
     rating: 4,
     category: "laptop",
-    quantity:0
+    quantity: 0
   },
   {
     image: "/devices/samsung-galaxy-s21.jpg",
@@ -13,7 +13,13 @@ export const deviceInfo = [
     price: "1,009,000",
     rating: 4,
     category: "phone",
-    quantity:0
+    quantity: 0,
+    specs: {
+      dimensions: "151.7x71.2x7.9mm",
+      displaySize: "6.2 inches",
+      cameraSetup: "Triple 12 MP; 10MP",
+      storageOptions: ['64gb', '128gb']
+    }
   },
   {
     image: "/devices/iphone-14-pro-max.jpg",
@@ -21,7 +27,13 @@ export const deviceInfo = [
     price: "1,499,000",
     rating: 4,
     category: "phone",
-    quantity:0
+    quantity: 0,
+    specs: {
+      dimensions: "",
+      displaySize: "",
+      cameraSetup: "",
+      storageOptions: []
+    }
   },
   {
     image: "/devices/samsung-galaxy-z-flip.jpg",
@@ -29,7 +41,13 @@ export const deviceInfo = [
     price: "1,599,000",
     rating: 4,
     category: "phone",
-    quantity:0
+    quantity: 0,
+    specs: {
+      dimensions: "",
+      displaySize: "",
+      cameraSetup: "",
+      storageOptions: []
+    }
   },
   {
     image: "/devices/iphone-SE-mini.jpg",
@@ -37,7 +55,13 @@ export const deviceInfo = [
     price: "120,000",
     rating: 4,
     category: "phone",
-    quantity:0
+    quantity: 0,
+    specs: {
+      dimensions: "",
+      displaySize: "",
+      cameraSetup: "",
+      storageOptions: []
+    }
   },
   {
     image: "/devices/LG_wireless_earbuds.jpg",
@@ -45,7 +69,7 @@ export const deviceInfo = [
     price: "45,000",
     category: "accessory",
     rating: 4,
-    quantity:0
+    quantity: 0
   },
   {
     image: "/devices/tecno-camon-20.jpg",
@@ -53,7 +77,13 @@ export const deviceInfo = [
     price: "450,000",
     rating: 4,
     category: "phone",
-    quantity:0
+    quantity: 0,
+    specs: {
+      dimensions: "",
+      displaySize: "",
+      cameraSetup: "",
+      storageOptions: []
+    }
   },
   {
     image: "/devices/oraimo-earpiece.jpg",
@@ -61,7 +91,7 @@ export const deviceInfo = [
     price: "8,000",
     rating: 4,
     category: "accessory",
-    quantity:0
+    quantity: 0
   },
   {
     image: "/devices/macbook air.jpg",
@@ -69,6 +99,6 @@ export const deviceInfo = [
     price: "1,599,000",
     rating: 4,
     category: "laptop",
-    quantity:0
+    quantity: 0
   },
 ];

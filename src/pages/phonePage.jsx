@@ -18,7 +18,7 @@ function PhonePage({handleAddToCart, modal, setModal}) {
         {filteredPhone.map((phone) => (
           <Phones
             phone={phone}
-            key={crypto.randomUUID()}
+            key={phone.name}
             onAddToCart={handleAddToCart}
           />
         ))}

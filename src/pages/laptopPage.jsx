@@ -25,7 +25,7 @@ function LaptopPage({ handleAddToCart, modal, setModal }) {
           {filteredLappy.map((lappy) => (
             <Laptops
               lappy={lappy}
-              key={crypto.randomUUID()}
+              key={lappy.name}
               onAddToCart={handleAddToCart}
               // setDisplayDetails={setDisplayDetails}
               // setDeetsToDisplay={setDeetsToDisplay}

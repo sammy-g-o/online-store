@@ -12,7 +12,7 @@ return (
         <SearchBar />
         <Icons />
       </Nav>
-      <ProductDetails />
+      <ProductDetails key={crypto.randomUUID()}/>
       <Footer />
     </>
   );

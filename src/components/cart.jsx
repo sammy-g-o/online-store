@@ -1,7 +1,7 @@
 import CartItem from "./cartItem";
 import { useNavigate } from "react-router-dom";
 /* eslint-disable react/prop-types */
-function Cart({ cart, onDeleteFromCart }) {
+function Cart({ cart, onDeleteFromCart, onIncreaseQuantity, onDecreaseQuantity }) {
   const navigate = useNavigate()
   function goToPreviousPage() {
     navigate(-1);
@@ -26,7 +26,15 @@ function Cart({ cart, onDeleteFromCart }) {
         {cart.length > 0 && (
           <div className="cart">
             <div></div>
-            {cart.map((cartItem) => <CartItem cartItem={cartItem} onDeleteFromCart={onDeleteFromCart} key={crypto.randomUUID()} />)}
+            {cart.map((cartItem) => (
+              <CartItem
+                cartItem={cartItem}
+                onDeleteFromCart={onDeleteFromCart}
+                onIncreaseQuantity={onIncreaseQuantity}
+                onDecreaseQuantity={onDecreaseQuantity}
+                key={cartItem.name}
+              />
+            ))}
           </div>
         )}
       </div>

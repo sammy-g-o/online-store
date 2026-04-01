@@ -6,7 +6,7 @@ import SearchBar from "../components/searchBar";
 import Icons from "../components/icons";
 import Cart from '../components/cart';
 
-function CartPage({handleDeleteFromCart, cart}) {
+function CartPage({handleDeleteFromCart, handleIncreaseQuantity, handleDecreaseQuantity, cart}) {
 
     return(
         <>
@@ -15,7 +15,12 @@ function CartPage({handleDeleteFromCart, cart}) {
           <SearchBar />
           <Icons/>
         </Nav>
-        <Cart cart={cart} onDeleteFromCart= {handleDeleteFromCart}/>
+        <Cart
+          cart={cart}
+          onDeleteFromCart={handleDeleteFromCart}
+          onIncreaseQuantity={handleIncreaseQuantity}
+          onDecreaseQuantity={handleDecreaseQuantity}
+        />
         <Footer />
         </>
     )

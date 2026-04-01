@@ -18,7 +18,7 @@ function AccessoriesPage({handleAddToCart, modal, setModal}) {
         {filteredAccessories.map((accessory) => (
           <Accessories
             accessory={accessory}
-            key={crypto.randomUUID()}
+            key={accessory.name}
             onAddToCart={handleAddToCart}
           />
         ))}
