@@ -25,7 +25,7 @@ function ProductDetails() {
       <div className="product__details--container">
         <span onClick={goToPreviousPage} className="go-back">&larr; Back</span>
         <div className="product__details--image">
-          <img src={product.image} alt="" />
+          <img src={product.image} alt="" width="600" height="600" />
         </div>
         <div className="product__details--name">
           <p>{product.name}</p>

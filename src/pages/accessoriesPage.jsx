@@ -1,10 +1,8 @@
 /* eslint-disable react/prop-types */
 import { deviceInfo } from "../data";
 import Accessories from "../components/accessories";
-import Nav from "../components/nav";
 import DeviceList from "../components/deviceList";
 import Categories from "../components/categories";
-import Footer from "../components/footer";
 import AddedToCartModal from "../components/addedToCartModal";
 function AccessoriesPage({handleAddToCart, modal, setModal}) {
   const filteredAccessories = deviceInfo.filter(
@@ -12,18 +10,18 @@ function AccessoriesPage({handleAddToCart, modal, setModal}) {
   );
   return (
     <>
-      <Nav />
+      
       <DeviceList categories={<Categories />} />
       <div className="listOfDevices">
-        {filteredAccessories.map((accessory) => (
+        {filteredAccessories.map((accessory, index) => (
           <Accessories
             accessory={accessory}
             key={accessory.name}
+            index={index}
             onAddToCart={handleAddToCart}
           />
         ))}
       </div>
-      <Footer />
       {modal && <AddedToCartModal modal={modal} setModal={setModal} />}
     </>
   );

@@ -2,10 +2,8 @@
 // import { useState } from "react";
 import { deviceInfo } from "../data";
 import Laptops from "../components/laptops";
-import Nav from "../components/nav";
 import DeviceList from "../components/deviceList";
 import Categories from "../components/categories";
-import Footer from "../components/footer";
 import AddedToCartModal from "../components/addedToCartModal";
 // import LaptopProductDetails from "../components/laptopProductDetails";
 function LaptopPage({ handleAddToCart, modal, setModal }) {
@@ -17,15 +15,15 @@ function LaptopPage({ handleAddToCart, modal, setModal }) {
   // const { name, price, image } = deetsToDisplay;
   return (
     <>
-      <Nav />
 
       <>
         <DeviceList categories={<Categories />} />
         <div className="listOfDevices">
-          {filteredLappy.map((lappy) => (
+          {filteredLappy.map((lappy, index) => (
             <Laptops
               lappy={lappy}
               key={lappy.name}
+              index={index}
               onAddToCart={handleAddToCart}
               // setDisplayDetails={setDisplayDetails}
               // setDeetsToDisplay={setDeetsToDisplay}
@@ -34,7 +32,6 @@ function LaptopPage({ handleAddToCart, modal, setModal }) {
         </div>
       </>
 
-      <Footer />
       {modal && <AddedToCartModal modal={modal} setModal={setModal} />}
     </>
   );

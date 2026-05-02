@@ -1,6 +1,4 @@
 /* eslint-disable react/prop-types */
-import Nav from "../components/nav";
-import Footer from "../components/footer";
 import DeviceList from "../components/deviceList";
 
 import Categories from "../components/categories";
@@ -12,20 +10,17 @@ function HomePage({ handleAddToCart, modal, setModal }) {
   return (
     <div style={{ position: "relative", width: "100%", height: "auto" }}>
       <div>
-        <Nav />
-
         <DeviceList categories={<Categories />} />
         <div className="listOfDevices">
-          {deviceInfo.map((device) => (
+          {deviceInfo.map((device, index) => (
             <Devices
               onAddToCart={handleAddToCart}
               device={device}
+              index={index}
               key={device.name}
             ></Devices>
           ))}
         </div>
-
-        <Footer />
       </div>
       {modal && <AddedToCartModal modal={modal} setModal={setModal} />}
     </div>

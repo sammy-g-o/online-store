@@ -20,7 +20,7 @@ function Cart({ cart, onDeleteFromCart, onIncreaseQuantity, onDecreaseQuantity }
         <h2 style={{ color: '#081142' }}>Shopping Cart</h2>
         {cart.length === 0 && (
           <><div className="empty-cart-message">
-            <img src="/Cart-Plus--Streamline-Bootstrap (1).svg" alt="" />
+            <img src="/Cart-Plus--Streamline-Bootstrap (1).svg" alt="" width="100" height="100" />
           </div><h2>Your Cart Is Empty</h2></>
         )}
         {cart.length > 0 && (

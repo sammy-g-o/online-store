@@ -7,7 +7,8 @@ function AddToCart({onClick}) {
         <span>Add to cart</span>{" "}
         <img
           src="../Cart-Plus--Streamline-Bootstrap (1).svg"
-          width="20px"
+          width="20"
+          height="20"
           alt=""
         />
       </button>

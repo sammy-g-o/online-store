@@ -3,7 +3,7 @@ function CartItem({ cartItem, onDeleteFromCart, onIncreaseQuantity, onDecreaseQu
     return (
         <div className="cart-item">
             <div className="cart-item__image">
-                <img src={cartItem.image} alt={cartItem.name} />
+                <img src={cartItem.image} alt={cartItem.name} width="100" height="100" />
             </div>
             <div className="cart-item__details">
                 <div className="cart-item__top">

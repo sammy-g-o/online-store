@@ -6,6 +6,8 @@ import AccessoriesPage from "../pages/accessoriesPage";
 import ProductDetailsPage from "../pages/productDetailsPage";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Nav from "./nav";
+import Footer from "./footer";
 function App() {
   const [modal, setModal] = useState(null);
   const [cart, setCart] = useState([]);
@@ -35,6 +37,7 @@ function App() {
   }
   return (
     <BrowserRouter>
+      <Nav />
       <Routes>
         <Route
           path="/"
@@ -100,6 +103,7 @@ function App() {
           element={<ProductDetailsPage />}
         />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
